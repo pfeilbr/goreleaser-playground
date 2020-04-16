@@ -15,10 +15,16 @@ export GITHUB_TOKEN='GITHUB_TOKEN'
 git tag -a v0.1.0 -m "First release"
 git push origin v0.1.0
 
-# run locally without publishing to github
+# build locally without publishing to github
 goreleaser --snapshot --rm-dist
 
+# run binary locally to test
+./dist/goreleaser-playground_darwin_amd64/goreleaser-playground
+
 # build and publish
-goreleaser
+goreleaser --rm-dist
+
+# see newly added release
+open https://github.com/pfeilbr/goreleaser-playground/releases
 
 ```
